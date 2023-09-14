@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #da570f;
+  --primary-hover: #eb9316;
+  --white: #fff;
+  --gray: rgb(247, 247, 247);
+}
+
+.container {
+  max-width: 1376px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: var(--gray);
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+.mmenuu {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+ul {
+  /* Убираю маркеры у списка*/
+  list-style: none;
+  /* Делаю элементы блочными. */
+  display: block;
+  /* Убираю отступы. */
+  margin: 0px;
+  /* Убираю еще отступы! */
+  padding: 0px;
+}
+ul:after {
+  /* Делаю элементы блочными. */
+  display: block;
+  /* Убираю выравнивание. */
+  float: none;
+  content: ' ';
+  clear: both;
+}
+ul.mmenuu > li {
+  /* Задаю выравнивание и позиционирование. */
+  float: left;
+  /* Считаем координаты относительно исходного места*/
+  position: relative;
+  border-right: 1px solid #fff;
+}
+
+ul.mmenuu > li:first-child {
+  border-left: 1px solid #fff;
+}
+
+ul.mmenuu > li > a {
+  /* Делаю элементы блочными: */
+  display: block;
+  /* Задаю белый цвет. */
+  color: #fff;
+  /* Задаю отступ 10px. */
+  padding: 10px;
+  /* Убираю форматирование*/
+  text-decoration: none;
+  /* Задаю цвет. */
+  background-color: #da570f;
+}
+ul.mmenuu > li > a:hover {
+  /* Задаю цвет при наведении. */
+  background-color: #eb9316;
+}
+ul.ssubmenuu {
+  position: absolute;
+  z-index: 2;
+  width: 240px;
+  top: 37px;
+  left: 0px;
+  /* Делаю субменю скрытыми. */
+  display: none;
+  /* Цвет — белый. */
+  background-color: white;
+}
+ul.ssubmenuu > li {
+  /* Блочное расположение элементов*/
+  display: block;
+}
+ul.ssubmenuu > li > a {
+  /* Делаю элементы блочными. */
+  display: block;
+  /* Убираю форматирование*/
+  text-decoration: none;
+  /* Задаю отступ. */
+  padding: 10px;
+  /* Задаю цвет. */
+  color: #ffffff;
+  /* Еще цвет. */
+  background-color: #da570f;
+}
+ul.ssubmenuu > li > a:hover {
+  /* Цвет бэкграунда при наведении. */
+  background-color: #eb9316;
+  /* Задаю подчеркивание*/
+  text-decoration: underline;
+}
+ul.mmenuu > li:hover > ul.ssubmenuu {
+  /* Делаю элементы блочными. */
+  display: block;
+}
+
+img {
+  border: 0;
+  border-radius: 15px;
+}
+
+.coupons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.coupons__category {
+  padding-top: 30px;
+  margin-bottom: -45px;
+  text-align: right;
+  flex: 1 1 100%;
+}
+
+.coupons__amount {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  text-align: right;
+  flex: 1 1 100%;
+}
+
+.coupons__amount span,
+.coupons__category span {
+  font-weight: bold;
+}
+
+.coupon {
+  position: relative;
+  background-color: var(--white);
+  padding: 20px;
+  /* width: 360px; */
+  width: calc(1316px / 3 - 20px);
+  border-radius: 12px;
+  height: 428px;
+}
+
+.coupon__img {
+  width: 100%;
+  height: 240px;
+}
+
+.coupon__sale-percent {
+  font-weight: 700;
+  background-color: var(--primary-color, #f75145);
+  padding: 6px 12px;
+  border-radius: 10px;
+  color: var(--white, #fff);
+  position: absolute;
+  left: 30px;
+  top: 12px;
+}
+
+.coupon__title {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.coupon__subtitle {
+  margin: 5px 0 15px 0;
+}
+
+/* .coupon__metro {
+  font-weight: 500;
+  font-size: 15px;
+  display: block;
+} */
+
+/* .coupon__metro::before {
+  content: url(../icons/Mosmetro_logo.svg);
+  display: inline-block;
+  height: 20px;
+  vertical-align: sub;
+  padding-right: 4px;
+} */
+
+/* .coupon__price {
+  vertical-align: -webkit-baseline-middle;
+  font-size: 22px;
+  color: #000;
+}
+
+.coupon__price::after {
+  content: ' руб.';
+  font-size: 20px;
+} */
+
+.coupon__link {
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 40px);
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--primary-color);
+  padding: 8px 0;
+  border-radius: 10px;
+}
+
+.coupon__link:hover,
+.coupon__link:active {
+  color: var(--white);
+}
+
+/* product page */
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border-radius: 20px;
+}
+
+.product_margin {
+  margin-top: 40px;
+}
+
+.product__info {
+  padding-top: 10px;
+}
+
+.product__title {
+  flex: 1 1 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.product__subtitle {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.product__description,
+.product__price {
+  margin-bottom: 25px;
+}
+
+.product__price span {
+  font-weight: bold;
+}
+
+.product__img {
+  margin-right: 20px;
+}
+
+.product__img,
+.product__info {
+  flex: 1 1 auto;
+}
+
+.product__location::before {
+  content: '';
+  background-image: url(../icons/location.png);
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: bottom;
+}
+
+.product__date {
+  flex: 1 1 100%;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.product__date span {
+  font-weight: bold;
+}
+
+.button-back {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--primary-color);
+  padding: 8px 0;
+  border-radius: 10px;
+}
+
+/* Редактор */
+
+table {
+  margin-top: 40px;
+  display: inline-block;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  background: #606060;
+  color: #fff;
+}
+
+td {
+  background: #b5b5b5;
+}
+
+.form-container {
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
